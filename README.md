@@ -1,1 +1,0 @@
-# rails-airbnb-clone
