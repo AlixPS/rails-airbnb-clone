@@ -6,10 +6,11 @@ class RentalsController < ApplicationController
   end
 
   def create
-    @rental     = Rental.new(rental_params)
-    @rental.car = @car
+    @rental      = Rental.new(rental_params)
+    @rental.car  = @car
+    @rental.user = @car.user
 
-    if @rental.create
+    if @rental.save
       redirect_to @car
     else
       render :new
