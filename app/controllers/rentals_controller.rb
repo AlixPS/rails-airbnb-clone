@@ -1,5 +1,6 @@
 class RentalsController < ApplicationController
-  before_action :set_car, only: %i[new create update]
+  before_action :set_car,    only: %i[new create update]
+  before_action :set_rental, only: %i[destroy update]
 
   def new
     @rental = Rental.new
@@ -24,12 +25,18 @@ class RentalsController < ApplicationController
     @rental.update(rental_params)
   end
 
-  def destroy; end
+  def destroy
+    @rental.destroy
+  end
 
   private
 
   def set_car
     @car = Car.find(params[:car_id])
+  end
+
+  def set_rental
+    @rental = Rental.find(params[:id])
   end
 
   def rental_params
