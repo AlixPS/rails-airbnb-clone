@@ -10,7 +10,7 @@ gem 'redis'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
-gem 'bootstrap-datetimepicker'
+gem 'bootstrap-datepicker-rails'
 gem 'font-awesome-sass'
 gem 'devise'
 gem 'sass-rails'
