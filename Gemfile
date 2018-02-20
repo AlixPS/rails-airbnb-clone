@@ -1,19 +1,19 @@
 source 'https://rubygems.org'
 ruby '2.4.3'
 
+gem 'autoprefixer-rails'
+gem 'bootstrap-sass'
+gem 'carrierwave', '~> 1.2'
+gem 'cloudinary'
+gem 'devise'
+gem 'faker'
 gem 'figaro'
+gem 'font-awesome-sass'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
-gem 'cloudinary'
-gem 'carrierwave', '~> 1.2'
-
-gem 'autoprefixer-rails'
-gem 'bootstrap-sass'
-gem 'font-awesome-sass'
-gem 'devise'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
@@ -24,10 +24,9 @@ group :development do
 end
 
 group :development, :test do
-  gem 'faker'
+  gem 'listen', '~> 3.0.5'
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
