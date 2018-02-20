@@ -10,6 +10,18 @@
 @import "font-awesome";
 
 // Your CSS partials
-@import "layouts/index";
-@import "components/index";
-@import "pages/index";
+@import "layouts/*";
+@import "components/*";
+@import "pages/*";
+
+// @import url("https://fonts.googleapis.com/css?family=Varela+Round");
+
+// /* Importing components */
+// @import url("components/card.css");
+// @import url("components/footer.css");
+// @import url("components/navbar.css");
+
+// /* Importing layouts */
+// @import url("layouts/map.css");
+// @import url("layouts/profile.css");
+
