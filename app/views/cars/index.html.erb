@@ -1,4 +1,6 @@
-
+<%= button_to "Logout", destroy_user_session_path, method: :delete %>
+<%= link_to "Update profile", edit_user_registration_path(current_user) %>
+<%= link_to "See my profile", user_profile_path %>
 <h1> Our available cars </h1>
 <%= link_to "Add your car!", new_car_path %>
 <hr>

@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :rentals, only: [] do
     resources :reviews, only: [:new, :create]
   end
+
+  get "user/profile", to: "pages#profile"
 end
