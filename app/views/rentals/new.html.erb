@@ -1,5 +1,6 @@
 <h1>New rental</h1>
 <%= simple_form_for [@car, @rental] do |f| %>
-  <%= f.input :checkin %>
+  <%= f.input :checkin  %>
   <%= f.input :checkout %>
+  <%= f.submit %>
 <% end %>
