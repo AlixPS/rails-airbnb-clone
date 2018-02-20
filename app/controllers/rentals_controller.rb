@@ -5,7 +5,16 @@ class RentalsController < ApplicationController
     @rental = Rental.new
   end
 
-  def create; end
+  def create
+    @rental     = Rental.new(rental_params)
+    @rental.car = @car
+
+    if @rental.create
+      redirect_to @car
+    else
+      render :new
+    end
+  end
 
   def edit; end
 
