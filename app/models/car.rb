@@ -4,6 +4,7 @@ class Car < ApplicationRecord
   belongs_to :user
   has_many :rentals
   has_many :reviews, through: :rentals
+  mount_uploader :photo, PhotoUploader
 
   validates :brand, presence: true
   validates :model, presence: true
