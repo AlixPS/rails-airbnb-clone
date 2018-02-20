@@ -1,0 +1,15 @@
+<h1> Our available cars </h1>
+<%= link_to "Add your car!", new_car_path %>
+<hr>
+<% @cars.each do |car| %>
+  <%= car.user.first_name %>
+  <%= car.user.last_name %>
+  <ul>
+    <li><%= car.brand %></li>
+    <li><%= car.model %></li>
+    <li><%= car.category %></li>
+  </ul>
+  <%= link_to "See the car's infos", car_path(car) %>
+  <hr>
+<% end %>
+

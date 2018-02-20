@@ -10,3 +10,4 @@ class Car < ApplicationRecord
   validates :category, presence: true,
                        inclusion: { in: CATEGORIES }
 end
+

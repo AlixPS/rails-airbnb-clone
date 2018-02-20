@@ -1,0 +1,6 @@
+<%= simple_form_for @car do |f| %>
+  <%= f.input :brand %>
+  <%= f.input :model %>
+  <%= f.input :category, collection: Car::CATEGORIES, include_blank: false %>
+  <%= f.button :submit %>
+<% end %>
