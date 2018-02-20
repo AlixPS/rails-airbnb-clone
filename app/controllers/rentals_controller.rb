@@ -1,7 +1,9 @@
 class RentalsController < ApplicationController
   before_action :set_car, only: %i[new create]
 
-  def new; end
+  def new
+    @rental = Rental.new
+  end
 
   def create; end
 
