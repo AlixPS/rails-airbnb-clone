@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_action :set_car, only: [:edit, :destroy, :show]
+  before_action :set_car, only: [:edit, :destroy, :show, :update]
 
   def new
     @car = Car.new
@@ -7,6 +7,7 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
+    @car.user = current_user
     if @car.save
       redirect_to car_path(@car)
     else
@@ -18,6 +19,8 @@ class CarsController < ApplicationController
   end
 
   def update
+    @car.update(car_params)
+    redirect_to car_path(@car)
   end
 
   def show
@@ -37,7 +40,7 @@ class CarsController < ApplicationController
   end
 
   def car_params
-    params.require(:car).permit(:brand, :model, :category, :user)
+    params.require(:car).permit(:brand, :model, :category)
   end
 
 end
