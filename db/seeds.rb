@@ -1,5 +1,5 @@
-User.destroy_all
 Car.destroy_all
+User.destroy_all
 
 CARS_LIST = [
   {
@@ -52,20 +52,21 @@ CARS_LIST = [
     model: 'Multipla',
     category: 'Utilitaire'
   }
-]
+].freeze
 
-CARS.length.times do |i|
+CARS_LIST.length.times do |i|
   char = Faker::HowIMetYourMother.character
-  CARS = [
+  cars = [
     {
-      brand: ,
-      model: ,
-      category: ,
+      brand: CARS_LIST[i][:brand],
+      model: CARS_LIST[i][:model],
+      category: CARS_LIST[i][:category],
       user: User.create(email: Faker::Internet.email,
-                  password: 'azerty',
-                  first_name: char.split[0],
-                  last_name:  char.split[1],
-                  birthdate: Faker::Date.birthday(18, 65))
+                        password: 'azerty',
+                        first_name: char.split[0],
+                        last_name:  char.split[1],
+                        birthdate: Faker::Date.birthday(18, 65))
     }
-  ]
+  ].freeze
+  Car.create(cars)
 end
