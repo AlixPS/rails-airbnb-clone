@@ -1,8 +1,2 @@
 <h1>Add a new car</h1>
-<%= simple_form_for @car do |f| %>
-  <%= f.input :brand %>
-  <%= f.input :model %>
-  <%= f.input :category %>
-  <%= f.input :user, as: :hidden %>
-  <%= f.button :submit %>
-<% end %>
+<%= render "shared/form", car: @car%>

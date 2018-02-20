@@ -3,7 +3,6 @@ class CarsController < ApplicationController
 
   def new
     @car = Car.new
-    redirect_to root_path
   end
 
   def create
