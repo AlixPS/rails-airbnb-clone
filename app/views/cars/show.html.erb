@@ -10,9 +10,12 @@
   <p>Rental's details</p>
   <ul>
     <% @car.rentals.each do |rental| %>
-      <li><%= rental.checkin %></li>
-      <li><%= rental.checkout %></li>
-      <hr>
+    <p><%= rental.checkin %> <%= rental.checkout %></p>
+      <%= simple_form_for [@car, rental] do |f| %>
+        <%= f.input :accepted, as: :boolean, label: 'Accepted?' %>
+        <%= f.submit %>
+        <hr>
+      <% end%>
     <% end %>
   </ul>
 <% end %>
