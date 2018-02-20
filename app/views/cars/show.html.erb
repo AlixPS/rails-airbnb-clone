@@ -6,6 +6,16 @@
   <%= @car.user.first_name %>
   <%= @car.user.last_name  %> 's car
 </p>
+<% if @car.user == current_user %>
+  <p>Rental's details</p>
+  <ul>
+    <% @car.rentals.each do |rental| %>
+      <li><%= rental.checkin %></li>
+      <li><%= rental.checkout %></li>
+      <hr>
+    <% end %>
+  </ul>
+<% end %>
 <hr>
   <h4>What other users say about this car : </h4>
   <p>Reviews, Reviews, Reviews</p>
