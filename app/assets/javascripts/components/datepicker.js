@@ -1,8 +1,11 @@
 $(function() {
-  $('#checkin_datepicker').datepicker();
+  today = new Date(Date.now());
+  $('#checkin_datepicker').datepicker('setDate', today)
+                          .datepicker('setStartDate', today);                        
   $('#checkout_datepicker').datepicker({
     useCurrent: false //Important! See issue #1075
   });
+
   $("#checkin_datepicker").on("changeDate", function(e) {
     $('#checkout_datepicker').datepicker('setStartDate', e.date)
   });
