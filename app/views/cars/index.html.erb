@@ -1,8 +1,8 @@
 <div class="container">
-  <%= link_to "See my profile", user_profile_path %>
-  <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+  <%= link_to "Mon profil", user_profile_path %>
+  <%= button_to "Déconnexion", destroy_user_session_path, method: :delete %>
   <h1> Our available cars </h1>
-  <%= link_to "Add your car!", new_car_path %>
+  <%= link_to "Ajouter ma voiture", new_car_path %>
   <hr>
   <% @cars.each do |car| %>
     <%= car.user.first_name %>
@@ -13,7 +13,7 @@
       <li><%= car.category %></li>
     </ul>
     <%= cl_image_tag car.photo, height: 300, width: 400, crop: :fit%> <br>
-    <%= link_to "See the car's infos", car_path(car) %>
+    <%= link_to "Détails de la voiture", car_path(car) %>
     <hr>
   <% end %>
 </div>

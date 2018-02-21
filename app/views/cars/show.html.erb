@@ -2,7 +2,7 @@
   <h1><%= @car.brand %> <%= @car.model%> | <%= @car.category %></h1>
 
   <hr>
-  <%= link_to "Edit that car", edit_car_path(@car) %> <br>
+  <%= link_to "Modifier cette voiture", edit_car_path(@car) %> <br>
   <%= cl_image_tag @car.photo, height: 300, width: 700, crop: :limit %>
   <hr>
   <p><%= @car.user.first_name %>
@@ -11,7 +11,7 @@
     <h4>What other users say about this car : </h4>
     <p>Reviews, Reviews, Reviews</p>
 
-  <%= link_to "Start a rental", "#" %>
+  <%= link_to "Faire une demande de location", "#" %>
   <br>
-  <%= link_to "Back to index", root_path %>
+  <%= link_to "Retour à la liste de véhicules", root_path %>
 </div>
