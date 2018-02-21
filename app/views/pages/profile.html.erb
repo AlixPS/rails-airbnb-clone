@@ -2,12 +2,12 @@
   <% if  current_user != nil%>
     <h1><%= current_user.first_name %> <%= current_user.last_name %> <%= cl_image_tag current_user.avatar_photo, height: 100, width: 100, crop: :fit%></h1>
     <table>
-      <tr><h4><td>E-mail :  </td> <td><%= current_user.email %></td></h4></tr>
-      <tr><h4><td> Password :  </td> <td>************ </td></h4></tr>
-      <tr><h4><td> Address :  </td> <td> <%= current_user.adress %></td></h4></tr>
-      <tr><h4><td> City :  </td> <td> <%= current_user.city %></td></h4></tr>
-      <tr><h4><td> Birthdate :  </td> <td><%= current_user.birthdate %></td></h4></tr>
-      <tr><h4><td> Driver licence ?   </td>
+      <tr><h4><td> E-mail :  </td> <td><%= current_user.email %></td></h4></tr>
+      <tr><h4><td> Mot de passe :  </td> <td>************ </td></h4></tr>
+      <tr><h4><td> Adresse :  </td> <td> <%= current_user.adress %></td></h4></tr>
+      <tr><h4><td> Ville :  </td> <td> <%= current_user.city %></td></h4></tr>
+      <tr><h4><td> Date de naissance :  </td> <td><%= current_user.birthdate %></td></h4></tr>
+      <tr><h4><td> Permis de conduire ?   </td>
         <td> <% if current_user.driver_licence? %>
         Yes ! </td>
         <td> <% else %>
@@ -15,10 +15,10 @@
         <% end %>
       </h4></tr>
     </table>
-    <%= link_to "Update profile", edit_user_registration_path(current_user) %>
+    <%= link_to "Modifier profil", edit_user_registration_path(current_user) %>
   <% else %>
-    <%= link_to "Log in!", new_user_session_path %>
+    <%= link_to "Se connecter", new_user_session_path %>
     <br>
-    <%= link_to "Sign up!", new_user_registration_path %>
+    <%= link_to "S'inscrire", new_user_registration_path %>
   <% end %>
 </div>
