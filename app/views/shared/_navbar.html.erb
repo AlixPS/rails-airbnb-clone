@@ -2,24 +2,27 @@
   <!-- Logo -->
   <a href="/" class="navbar-smap-brand">
     <%= image_tag "logo.png"%>
-
   </a>
 
   <!-- Right Navigation -->
-  <div class="navbar-smap-right hidden-xs hidden-sm">
+  <div class="navbar-smap-right">
 
-    <a href="" class="navbar-smap-item navbar-smap-link">Profil</a>
+    <a href="/user/profile" class="navbar-smap-item navbar-smap-link">Profil</a>
     <a href="" class="navbar-smap-item navbar-smap-link">Locations</a>
-    <a href="" class="navbar-smap-item navbar-smap-link">Messages</a>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"navbar-smap-item navbar-smap-link" %>
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-smap-item">
       <div class="dropdown">
-        <img src="http://res.cloudinary.com/dn3sbzgqs/image/upload/v1519135232/smap_logo.png" class="avatar dropdown-toggle" id="navbar-smap-menu" data-toggle="dropdown">
+        <% if current_user && current_user.avatar_photo != nil  %>
+        <%= image_tag current_user.avatar_photo, class:"avatar dropdown-toggle", id:"navbar-smap-menu"%>
+        <% else %>
+        <%= image_tag "logo.png", class:"avatar dropdown-toggle", id:"navbar-smap-menu"%>
+        <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-smap-dropdown-menu">
-          <li><a href="#">Profil</a></li>
+          <li><a href="/user/profile">Profil</a></li>
           <li><a href="#">Tableau de bord</a></li>
-          <li><a href="#">Déconnexion</a></li>
+          <li><a href="/users/cancel">Déconnexion</a></li>
         </ul>
       </div>
     </div>
