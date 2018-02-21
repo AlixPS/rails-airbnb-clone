@@ -1,5 +1,6 @@
 $(function() {
-  today = new Date(Date.now());
+  const today = new Date(Date.now());
+
   $('#checkin_datepicker').datepicker('setDate', today)
                           .datepicker('setStartDate', today);
   $('#checkout_datepicker').datepicker({
