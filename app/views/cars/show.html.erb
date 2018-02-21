@@ -1,15 +1,17 @@
 <div class="container">
   <h1><%= @car.brand %> <%= @car.model%> | <%= @car.category %></h1>
-<hr>
-<%= link_to "Edit that car", edit_car_path(@car) %>
-<hr>
-<p><%= @car.user.first_name %>
-  <%= @car.user.last_name  %> 's car</p>
-<hr>
-  <h4>What other users say about this car : </h4>
-  <p>Reviews, Reviews, Reviews</p>
 
-<%= link_to "Start a rental", "#" %>
-<br>
-<%= link_to "Back to index", root_path %>
+  <hr>
+  <%= link_to "Edit that car", edit_car_path(@car) %> <br>
+  <%= cl_image_tag @car.photo, height: 300, width: 700, crop: :limit %>
+  <hr>
+  <p><%= @car.user.first_name %>
+    <%= @car.user.last_name  %> 's car</p>
+  <hr>
+    <h4>What other users say about this car : </h4>
+    <p>Reviews, Reviews, Reviews</p>
+
+  <%= link_to "Start a rental", "#" %>
+  <br>
+  <%= link_to "Back to index", root_path %>
 </div>
