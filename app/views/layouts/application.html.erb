@@ -33,6 +33,7 @@
           <li><a href="#">Déconnexion</a></li>
         </ul>
       </div>
+      <%= button_to "Logout", destroy_user_session_path, method: :delete %>
     </div>
   </div>
     <%= yield %>
