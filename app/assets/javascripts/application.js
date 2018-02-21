@@ -4,4 +4,5 @@
 //= require bootstrap
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
+//= require bootstrap-timepicker
 //= require_tree .
