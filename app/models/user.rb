@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :rentals, through: :cars
   has_many :cars
   mount_uploader :avatar_photo, PhotoUploader
+  mount_uploader :driver_licence, PhotoUploader
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

@@ -16,9 +16,12 @@
     <%= f.input :last_name, required: true %>
     <%= f.input :adress %>
     <%= f.input :city %>
-    <%= f.input :birthdate%>
+    <%= f.input :birthdate, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 12,
+                              order: [:day, :month, :year] %>
     <%= f.input :avatar_photo %>
     <%= f.input :avatar_photo_cache, as: :hidden %>
+    <%= f.input :driver_licence %>
 
     <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
   </div>
