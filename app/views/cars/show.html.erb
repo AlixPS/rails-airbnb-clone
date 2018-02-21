@@ -8,10 +8,23 @@
   <p><%= @car.user.first_name %>
     <%= @car.user.last_name  %> 's car</p>
   <hr>
+  <% if @car.user == current_user %>
+  <p>Rental's details</p>
+  <ul>
+    <% @car.rentals.each do |rental| %>
+    <p><%= rental.checkin %> <%= rental.checkout %></p>
+      <%= simple_form_for [@car, rental] do |f| %>
+        <%= f.input :accepted, as: :boolean, label: 'Accepted?' %>
+        <%= f.submit %>
+        <hr>
+      <% end%>
+    <% end %>
+  </ul>
+<% end %>
     <h4>What other users say about this car : </h4>
     <p>Reviews, Reviews, Reviews</p>
 
-  <%= link_to "Faire une demande de location", "#" %>
+  <%= link_to "Faire une demande de location", new_car_rental_path(@car) %>
   <br>
   <%= link_to "Retour à la liste de véhicules", root_path %>
 </div>
