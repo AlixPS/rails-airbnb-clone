@@ -1,4 +1,5 @@
-<h1><%= @car.brand %> <%= @car.model%> | <%= @car.category %></h1>
+<div class="container">
+  <h1><%= @car.brand %> <%= @car.model%> | <%= @car.category %></h1>
 <hr>
 <%= link_to "Edit that car", edit_car_path(@car) %>
 <hr>
@@ -11,3 +12,4 @@
 <%= link_to "Start a rental", "#" %>
 <br>
 <%= link_to "Back to index", root_path %>
+</div>
