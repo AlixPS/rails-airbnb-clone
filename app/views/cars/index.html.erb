@@ -1,7 +1,5 @@
 <div class="container">
-  <%= link_to "Mon profil", user_profile_path %>
-  <%= button_to "Déconnexion", destroy_user_session_path, method: :delete %>
-  <h1> Our available cars </h1>
+  <h1> Voitures disponibles </h1>
   <%= link_to "Ajouter ma voiture", new_car_path %>
   <hr>
   <% @cars.each do |car| %>
