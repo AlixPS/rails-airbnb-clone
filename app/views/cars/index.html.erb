@@ -1,18 +1,11 @@
 <div class="container">
   <h1> Our available cars </h1>
   <%= link_to "Add your car!", new_car_path %>
-  <hr>
-  <% @cars.each do |car| %>
-    <%= car.user.first_name %>
-    <%= car.user.last_name %>
-    <ul>
-      <li><%= car.brand %></li>
-      <li><%= car.model %></li>
-      <li><%= car.category %></li>
-    </ul>
-    <%= cl_image_tag car.photo, height: 300, width: 400, crop: :fit%> <br>
-    <%= link_to "See the car's infos", car_path(car) %>
-    <hr>
-  <% end %>
+  <div class="row">
+    <% @cars.each do |car| %>
+      <div class="col-xs-12 col-sm-6">
+        <%= render 'shared/card', car: car %>
+      </div>
+    <% end %>
+  </div>
 </div>
-

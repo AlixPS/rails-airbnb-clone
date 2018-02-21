@@ -1,16 +1,78 @@
-.card {
-  background-size: cover;
-  background-position: center;
-  height: 150px;
-  border-radius: 1px;
-  margin: 15px 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  font-size: 25px;
+// .card {
+//   background-size: cover;
+//   background-position: center;
+//   height: 150px;
+//   border-radius: 1px;
+//   margin: 15px 10px;
+//   box-shadow: 0 0 10px rgba(0,0,0,0.2);
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+//   font-size: 25px;
+//   color: white;
+//   font-weight: bolder;
+//   text-shadow: 0 0 10px rgba(0,0,0,0.7);
+// }
+
+.card{
+  display: block;
+  width: 100%;
+  flex: 1 1 auto;
+  // width: 20%;
+  margin: 10px;
+  box-shadow: 4px 4px 27px -1px #999999;
+  transition: all 0.3s ease;
   color: white;
-  font-weight: bolder;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
 
+// .card:hover {
+//   margin-top: -1px;
+// }
+
+.card-body {
+  background-size: cover;
+  height: 180px;
+  position: relative;
+}
+
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.card-avatar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.card-desc {
+  position: absolute;
+  bottom: 10px;
+  left:10px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: #999999;
+  background-color:gray;
+}
+
+.card-date {
+  font-size: 12px;
+}
+
+.card a:hover {
+  text-decoration: none;
+  color: white;
+  opacity: 0.4;
+  padding: 5px;
+}
+
+.card-link a:hover {
+  opacity: 1;
+}
