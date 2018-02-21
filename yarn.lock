@@ -904,15 +904,13 @@ boom@5.x.x:
   dependencies:
     hoek "4.x.x"
 
-bootstrap-datepicker@^1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/bootstrap-datepicker/-/bootstrap-datepicker-1.7.1.tgz#4ee7faf34888dbec7834fbf9dbe7c4277e01ddaf"
-  dependencies:
-    jquery ">=1.7.1 <4.0.0"
-
 bootstrap-datetimepicker@^0.0.7:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/bootstrap-datetimepicker/-/bootstrap-datetimepicker-0.0.7.tgz#a98312648894b81915531b057ff742835843f971"
+
+"bootstrap-timepicker@https://github.com/jdewit/bootstrap-timepicker/releases/download/v0.5.2/bootstrap-timepicker.tar.gz":
+  version "0.5.2"
+  resolved "https://github.com/jdewit/bootstrap-timepicker/releases/download/v0.5.2/bootstrap-timepicker.tar.gz#c66e7818a7fc82a907657f4dbb02349c59e19490"
 
 bootstrap@3:
   version "3.3.7"
@@ -3063,7 +3061,7 @@ isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
 
-"jquery@>=1.7.1 <4.0.0", jquery@^3.3.1:
+jquery@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
 
