@@ -1,6 +1,6 @@
 //= require rails-ujs
 //= require jquery
+//= require moment
 //= require bootstrap
-//= require bootstrap-datepicker/core
-//= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
+//= require bootstrap-datetimepicker
 //= require_tree .
