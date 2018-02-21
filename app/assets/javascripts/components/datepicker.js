@@ -1,5 +1,5 @@
 $(function() {
-  const today = new Date(Date.now());
+  today = new Date(Date.now());
 
   $('#checkin_datepicker').datepicker({language: 'fr'})
                           .datepicker('setDate', today)
