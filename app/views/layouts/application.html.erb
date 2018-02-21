@@ -10,33 +10,12 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <div class="navbar-smap">
-  <!-- Logo -->
-  <a href="/" class="navbar-smap-brand">
-    <%= image_tag "logo.png"%>
-  </a>
-
-  <!-- Right Navigation -->
-  <div class="navbar-smap-right hidden-xs hidden-sm">
-
-    <a href="" class="navbar-smap-item navbar-smap-link">Profil</a>
-    <a href="" class="navbar-smap-item navbar-smap-link">Locations</a>
-    <a href="" class="navbar-smap-item navbar-smap-link">Messages</a>
-
-    <!-- Profile picture with dropdown list -->
-    <div class="navbar-smap-item">
-      <div class="dropdown">
-        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-smap-menu" data-toggle="dropdown">
-        <ul class="dropdown-menu dropdown-menu-right navbar-smap-dropdown-menu">
-          <li><a href="#">Profil</a></li>
-          <li><a href="#">Tableau de bord</a></li>
-          <li><a href="#">Déconnexion</a></li>
-        </ul>
-      </div>
-      <%= button_to "Logout", destroy_user_session_path, method: :delete %>
-    </div>
-  </div>
+    <%= render 'shared/navbar' %>
+    
     <%= yield %>
+
+    <%= render 'shared/footer' %>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
