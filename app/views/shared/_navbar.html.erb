@@ -8,20 +8,22 @@
   <!-- Right Navigation -->
   <div class="navbar-smap-right hidden-xs hidden-sm">
 
-    <a href="" class="navbar-smap-item navbar-smap-link">Profil</a>
+    <a href="" class="navbar-smap-item navbar-smap-link"><%= link_to "Profil", user_profile_path %></a>
     <a href="" class="navbar-smap-item navbar-smap-link">Locations</a>
     <a href="" class="navbar-smap-item navbar-smap-link">Messages</a>
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-smap-item">
       <div class="dropdown">
-        <img src="http://res.cloudinary.com/dn3sbzgqs/image/upload/v1519135232/smap_logo.png" class="avatar dropdown-toggle" id="navbar-smap-menu" data-toggle="dropdown">
+        <%= image_tag ("profil.jpg"), class:"avatar", id:"navbar-smap-menu", data: { toggle: 'dropdown' } %>
         <ul class="dropdown-menu dropdown-menu-right navbar-smap-dropdown-menu">
-          <li><a href="#">Profil</a></li>
+          <li><a href="#"><%= link_to "Profil", user_profile_path %></a></li>
           <li><a href="#">Tableau de bord</a></li>
-          <li><a href="#">Déconnexion</a></li>
+          <li><a href="#"><%= link_to "Déconnexion", destroy_user_session_path, method: :delete %></a></li>
         </ul>
       </div>
     </div>
   </div>
 </div>
+
+
