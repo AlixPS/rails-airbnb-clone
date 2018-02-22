@@ -2,6 +2,10 @@
   <%= f.input :brand %>
   <%= f.input :model %>
   <%= f.input :category, collection: Car::CATEGORIES, include_blank: false %>
+  <%= f.input :boite, collection: Car::BOITE, include_blank: false %>
+  <%= f.input :moteur, collection: Car::MOTEUR, include_blank: false %>
+  <%= f.input :places %>
+  <%= f.input :portes %>
   <%= f.input :photo %>
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.button :submit %>
