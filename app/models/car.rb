@@ -3,6 +3,12 @@ class Car < ApplicationRecord
   MOTEUR = %w[Electrique Essence Diesel].freeze
   BOITE = %w[Auto Manuel].freeze
 
+  include AlgoliaSearch
+
+  algoliasearch do
+    attribute :brand, :model, :category
+  end
+
   belongs_to :user
   has_many :rentals, dependent: :destroy
   has_many :reviews, through: :rentals
