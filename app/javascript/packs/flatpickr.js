@@ -7,8 +7,8 @@ const today = new Date(Date.now());
 
 flatpickr('#checkin_datepicker', {
   altInput:   true,
-  altFormat:  "j F Y",
-  dateFormat: "Y-m-d",
+  altFormat:  "j F Y - h:i",
+  dateFormat: "Z",
   enableTime: true,
   locale:     French,
   minDate:    today,
@@ -16,8 +16,8 @@ flatpickr('#checkin_datepicker', {
   onChange: function(selectedDates, dateStr, instance) {
     flatpickr('#checkout_datepicker', {
       altInput:   true,
-      altFormat:  "j F Y",
-      dateFormat: "Y-m-d",
+      altFormat:  "j F Y - h:i",
+      dateFormat: "Z",
       enableTime: true,
       locale:     French,
       minDate:    dateStr
