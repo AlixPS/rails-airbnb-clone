@@ -8,9 +8,9 @@ fr:
     new:
       title: Ajouter une nouvelle voiture
     edit:
-      title: Modifier cette voiture
+      title: Modifier %{brand} %{model}
     show:
-      title: Détails de la voiture
+      title: Détails %{brand} %{model}
 
   rentals:
     new:
