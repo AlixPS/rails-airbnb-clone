@@ -84,6 +84,7 @@ GEM
       activesupport (>= 4.2.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    http_accept_language (2.1.1)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -111,6 +112,8 @@ GEM
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
+    page_title_helper (2.1.0)
+      rails (>= 3.0.0)
     pg (0.21.0)
     pry (0.11.3)
       coderay (~> 1.1.0)
@@ -226,9 +229,11 @@ DEPENDENCIES
   faker
   figaro
   font-awesome-sass
+  http_accept_language
   jbuilder (~> 2.0)
   jquery
   listen (~> 3.0.5)
+  page_title_helper
   pg (~> 0.21)
   pry-byebug
   pry-rails

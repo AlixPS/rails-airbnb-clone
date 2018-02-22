@@ -1,5 +1,7 @@
+<%# @title = 'SMAP' %>
+
 <div class="container">
-  <h1> Voitures disponibles </h1>
+  <h1><%= page_title!(t('.title')) %></h1>
   <%= link_to "Ajouter ma voiture!", new_car_path %>
   <div class="row">
     <% @cars.each do |car| %>
