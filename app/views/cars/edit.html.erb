@@ -1,4 +1,4 @@
 <div class="container">
-<h1>Modifier cette voiture</h1>
+<h1><%= page_title!(t('.title', brand: @car.brand, model: @car.model))%></h1>
 <%= render "shared/form", car: @car%>
 </div>
