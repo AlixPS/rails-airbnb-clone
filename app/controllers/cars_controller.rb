@@ -28,6 +28,15 @@ class CarsController < ApplicationController
 
   def index
     @cars = Car.all
+    @users = User.where.not(latitude: nil, longitude: nil)
+
+    @markers = @users.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def destroy
