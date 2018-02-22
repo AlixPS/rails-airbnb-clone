@@ -1,7 +1,7 @@
 <h1>New rental</h1>
-<%= simple_form_for [@car, @rental] do |f| %>
-  <%= f.text_field :checkin, class: 'datepicker', id: 'checkin_datepicker', placeholder: 'Début'  %>
-  <%= f.text_field :checkout, class: 'datepicker', id: 'checkout_datepicker', placeholder: 'Fin' %>
+<%= simple_form_for([@car, @rental], html: { class: 'form-inline' }) do |f| %>
+  <%= f.input :checkin, as: :string, label: false, input_html: { id: 'checkin_datepicker' }, placeholder: 'Début'  %>
+  <%= f.input :checkout, as: :string, label: false, input_html: { id: 'checkout_datepicker' }, placeholder: 'Fin' %>
   <%= f.submit %>
 <% end %>
 
