@@ -1,11 +1,14 @@
-<div class="container">
-  <h1> Voitures disponibles </h1>
-  <%= link_to "Ajouter ma voiture!", new_car_path %>
-  <div class="row">
-    <% @cars.each do |car| %>
-      <div class="col-xs-12 col-sm-6">
-        <%= render 'shared/card', car: car %>
-      </div>
-    <% end %>
+<div class="main-container">
+  <div class="card-container text-center">
+    <h1><%= page_title!(t('.title')) %></h1>
+    <%= link_to "Ajouter ma voiture!", new_car_path %>
+    <div class="row">
+      <% @cars.each do |car| %>
+        <div class="col-xs-12 col-md-6">
+          <%= render 'shared/card', car: car %>
+        </div>
+      <% end %>
+    </div>
   </div>
+  <div id="map" data-markers="<%= @markers.to_json %>"></div>
 </div>

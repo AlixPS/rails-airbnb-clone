@@ -1,33 +1,56 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  app:
+    name: SMAPPY
+
+  cars:
+    index:
+      title: Available cars
+    new:
+      title: Add a new car
+    edit:
+      title: "Modify %{brand} %{model}"
+    show:
+      title: "%{brand} %{model}"
+
+  rentals:
+    new:
+      title: New rental
+    edit:
+      title: Change rental
+
+  reviews:
+    new:
+      title: New review
+
+  pages:
+    profile:
+      title: Your profile
+
+  devise:
+    confirmations:
+      new:
+        title: Resend instructions
+    mailer:
+      confirmation_instructions:
+        title: Account confirmation
+      email_changed:
+        title: Changed email
+      password_change:
+        title: Changed password
+      reset_password_instructions:
+        title: Reset password instructions
+      unlock_instructions:
+        title: Unlock your account
+    passwords:
+      edit:
+        title: Change your password
+      new:
+        title: New password
+    registrations:
+      edit:
+        title: Account details
+      new:
+        title: Sign up
+    unlocks:
+      new:
+        title: Unlock instructions
