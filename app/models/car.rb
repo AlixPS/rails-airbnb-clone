@@ -1,6 +1,12 @@
 class Car < ApplicationRecord
   CATEGORIES = %w[Citadine Compacte Monospace SUV Utilitaire].freeze
 
+  include AlgoliaSearch
+
+  algoliasearch do
+    attribute :brand, :model, :category
+  end
+
   belongs_to :user
   has_many :rentals
   has_many :reviews, through: :rentals

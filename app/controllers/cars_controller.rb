@@ -1,6 +1,10 @@
 class CarsController < ApplicationController
   before_action :set_car, only: [:edit, :destroy, :show, :update]
 
+  def home
+    @cars = Car.all
+  end
+
   def new
     @car = Car.new
   end
