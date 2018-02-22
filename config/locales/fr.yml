@@ -1,0 +1,6 @@
+fr:
+  app:
+    name: 'SMAP'
+  cars:
+    index:
+      title: 'SMAP'
