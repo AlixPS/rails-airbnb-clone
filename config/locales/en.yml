@@ -15,3 +15,6 @@ en:
       title: New rental
     edit:
       title: Change rental
+  review:
+    new:
+      title: New review

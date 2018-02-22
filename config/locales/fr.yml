@@ -15,3 +15,6 @@ fr:
       title: Nouvelle location
     edit:
       title: Modifier la location
+  review:
+    new:
+      title: Nouvel avis
