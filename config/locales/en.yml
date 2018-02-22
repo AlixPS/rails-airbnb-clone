@@ -1,6 +1,17 @@
 en:
   app:
-    name: 'SMAP'
+    name: SMAP
   cars:
     index:
-      title: ''
+      title:
+    new:
+      title: Add a new car
+    edit:
+      title: Change details of car
+    show:
+      title: Details of car
+  rentals:
+    new:
+      title: New rental
+    edit:
+      title: Change rental
