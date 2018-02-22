@@ -8,9 +8,9 @@ en:
     new:
       title: Add a new car
     edit:
-      title: Modify %{brand} %{model}
+      title: "Modify %{brand} %{model}"
     show:
-      title: %{brand} %{model}
+      title: "%{brand} %{model}"
 
   rentals:
     new:

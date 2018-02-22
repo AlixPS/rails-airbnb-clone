@@ -12,7 +12,7 @@ fr:
     new:
       title: Ajouter une nouvelle voiture
     edit:
-      title: Modifier %{brand} %{model}
+      title: "Modifier %{brand} %{model}"
     show:
       title: Détails %{brand} %{model}
 
