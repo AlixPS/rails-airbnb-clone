@@ -17,6 +17,7 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
+gem "geocoder"
 
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-timepicker-rails'
