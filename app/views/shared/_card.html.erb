@@ -4,11 +4,21 @@
   <div class="card-category text-center">
     <h3><%= car.brand %> <%= car.model %></h3>
   </div>
-    <div class="card-desc">
-
-    </div>
+  <div class="card-desc">
+   <%= car.user.first_name %>  <%= car.user.last_name %>
+  </div>
   <% end %>
-    <div class="card-footer text-center">
-      <p><%= car.category %></p> <p> <%= car.user.first_name %>  <%= car.user.last_name %> <%= image_tag car.user.avatar_photo, class:"avatar" %> </p>
+    <div class="card-footer">
+        <p><%= car.category %> <%= image_tag car.user.avatar_photo, class:"avatar card-avatar" %></p>
+      <div class="card-icon-list">
+        <div class="card-list">
+          <h4><i class="fas fa-users"></i> &nbsp; Places</h4>
+          <h4 class="material-icons-li"><i class="tiny material-icons">local_gas_station</i> &nbsp; Moteur</h4>
+        </div>
+        <div class="card-list">
+          <h4><i class="fas fa-cogs"></i> &nbsp; Boite</h4>
+          <h4><i class="fas fa-car"></i> &nbsp; Portes</h4>
+        </div>
+      </div>
     </div>
 </div>
