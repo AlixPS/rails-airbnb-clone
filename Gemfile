@@ -18,9 +18,6 @@ gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
 gem "geocoder"
-
-gem 'bootstrap-datepicker-rails'
-gem 'bootstrap-timepicker-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'

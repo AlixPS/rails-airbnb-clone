@@ -904,20 +904,6 @@ boom@5.x.x:
   dependencies:
     hoek "4.x.x"
 
-bootstrap-datepicker@^1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/bootstrap-datepicker/-/bootstrap-datepicker-1.7.1.tgz#4ee7faf34888dbec7834fbf9dbe7c4277e01ddaf"
-  dependencies:
-    jquery ">=1.7.1 <4.0.0"
-
-bootstrap-datetimepicker@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/bootstrap-datetimepicker/-/bootstrap-datetimepicker-0.0.7.tgz#a98312648894b81915531b057ff742835843f971"
-
-bootstrap-timepicker@^0.5.2:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/bootstrap-timepicker/-/bootstrap-timepicker-0.5.2.tgz#10ed9f2a2f0b8ccaefcde0fcf6a0738b919a3835"
-
 bootstrap@3:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
@@ -2221,6 +2207,10 @@ find-up@^2.0.0, find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
+flatpickr@^4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.3.2.tgz#6a477043c075ef36c3ff54fadb49b936a64d635f"
+
 flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
@@ -3071,7 +3061,7 @@ isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
 
-"jquery@>=1.7.1 <4.0.0", jquery@^3.3.1:
+jquery@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
 
