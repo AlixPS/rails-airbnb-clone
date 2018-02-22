@@ -2,6 +2,10 @@ fr:
   app:
     name: SMAPPY
 
+  errors:
+    messages:
+      blank: "Champ requis"
+
   cars:
     index:
       title: Voitures disponibles
