@@ -1,12 +1,24 @@
 <% url = (car.photo? ? cl_image_path(car.photo, height: 250, width: 450, crop: :fill) : "" )  %>
-<%= link_to car_path(car), class: "card text-center", style:"background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('#{url}')" do %>
-    <div class="card-body">
-      <h3><%= car.brand %> <%= car.model %></h3>
+<div class="card text-center">
+  <%= link_to car_path(car), class: "card-body", style:"background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('#{url}')" do %>
+  <div class="card-category text-center">
+    <h3><%= car.brand %> <%= car.model %></h3>
+  </div>
+  <div class="card-desc">
+   <%= car.user.first_name %>  <%= car.user.last_name %>
+  </div>
+  <% end %>
+    <div class="card-footer">
+        <p><%= car.category %> <%= image_tag car.user.avatar_photo, class:"avatar card-avatar" %></p>
+      <div class="card-icon-list">
+        <div class="card-list">
+          <h4><i class="fas fa-users"></i> &nbsp; <%= car.places %> Places</h4>
+          <h4 class="material-icons-li"><i class="tiny material-icons">local_gas_station</i> &nbsp; <%= car.moteur %></h4>
+        </div>
+        <div class="card-list">
+          <h4><i class="fas fa-cogs"></i> &nbsp; <%= car.boite %></h4>
+          <h4><i class="fas fa-car"></i> &nbsp; <%= car.portes %> Portes</h4>
+        </div>
+      </div>
     </div>
-    <div class="card-description">
-      <p><%= car.user.first_name %>  <%= car.user.last_name %></p>
-    </div>
-<!--     <div class="card-footer text-center">
-      <%= car.category %>
-    </div> -->
-<% end %>
+</div>

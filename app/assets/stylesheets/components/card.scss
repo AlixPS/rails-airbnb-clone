@@ -15,14 +15,21 @@
 // }
 
 .card{
-  display: block;
-  width: 100%;
+  width: 350px;
   flex: 1 1 auto;
+  opacity: 0.9;
   // width: 20%;
   margin: 10px;
-  box-shadow: 4px 4px 27px -1px #999999;
+  box-shadow: 4px 4px 27px -1px gray;
   transition: all 0.3s ease;
   color: white;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    &:hover {
+      opacity: 1;
+    }
 }
 
 // .card:hover {
@@ -33,46 +40,88 @@
   background-size: cover;
   height: 180px;
   position: relative;
+  display: block;
 }
 
 .card-category {
   position: absolute;
-  top: 10px;
+  width: 100%;
+  top: 0px;
   left: 10px;
+  h3 {
+    line-height: 0px;
+    margin-top: 14px;
+
+  }
 }
 
 .card-avatar {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  bottom: 60px;
+  right: 15px;
+  border: 2px solid rgb(229, 181, 25);
 }
 
 .card-desc {
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   left:10px;
+  width: 100%;
+  padding-bottom: 2px;
 }
 
 .card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
+  // padding: 12px;
+  border-top: 1.5px solid rgb(229, 181, 25);
   color: #999999;
-  background-color:gray;
+  background-color:white;
+  height: 80px;
+  position: relative;
+  p {
+    margin: 0;
+    padding-top: 2px;
+  }
 }
 
 .card-date {
   font-size: 12px;
 }
 
-.card a:hover {
+.card-icon-list {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60%;
+
+}
+
+.card-list {
+  list-style: none;
+  display: block;
+  margin: 0;
+  h4 {
+    box-sizing: border-box;
+    font-size: 15px;
+  };
+  i {
+  color: rgb(229, 181, 25);
+  }
+}
+.card-link {
+
+  &:hover {
   text-decoration: none;
   color: white;
   opacity: 0.4;
   padding: 5px;
+  }
 }
 
 .card-link a:hover {
   opacity: 1;
+}
+
+.material-icons-li {
+  display:flex;
+  align-items:center;
 }
