@@ -1,4 +1,5 @@
 <div class="container">
+  <% page_title!(t('.title', brand: @car.brand, model: @car.model)) %>
   <h1><%= @car.brand %> <%= @car.model%> | <%= @car.category %></h1>
 
   <hr>
