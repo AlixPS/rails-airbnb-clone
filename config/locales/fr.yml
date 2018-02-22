@@ -1,23 +1,56 @@
 fr:
   app:
     name: SMAP
+
   cars:
     index:
-      title:
+      title: Voitures disponibles
     new:
       title: Ajouter une nouvelle voiture
     edit:
       title: Modifier cette voiture
     show:
       title: Détails de la voiture
+
   rentals:
     new:
       title: Nouvelle location
     edit:
       title: Modifier la location
+
   review:
     new:
       title: Nouvel avis
+
   pages:
     profile:
       title: Votre profil
+
+  devise:
+    confirmations:
+      new:
+        title: Renvoyer les instructions
+    mailer:
+      confirmation_instructions:
+        title: Confirmation du compte
+      email_changed:
+        title: Email modifié
+      password_change:
+        title: Mot de passe modifié
+      reset_password_instructions:
+        title: Instructions pour modifier votre mot de passe
+      unlock_instructions:
+        title: Débloquer votre compte
+    passwords:
+      edit:
+        title: Changer votre mot de passe
+      new:
+        title: Nouveau mot de passe
+    registrations:
+      edit:
+        title: Détails de votre compte
+      new:
+        title: Inscription
+    unlocks:
+      new:
+        title: Comment déverouiller votre compte
