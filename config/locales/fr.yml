@@ -18,3 +18,6 @@ fr:
   review:
     new:
       title: Nouvel avis
+  pages:
+    profile:
+      title: Votre profil
