@@ -8,8 +8,8 @@ CARS_LIST = [
     category: 'Citadine',
     places: 5,
     portes: 5,
-    moteur: "Electrique",
-    boite: "Auto"
+    moteur: 'Electrique',
+    boite: 'Auto'
   },
   {
     brand: 'Renault',
@@ -17,8 +17,8 @@ CARS_LIST = [
     category: 'Citadine',
     places: 4,
     portes: 3,
-    moteur: "Essence",
-    boite: "Manuel"
+    moteur: 'Essence',
+    boite: 'Manuel'
   },
   {
     brand: 'Citroën',
@@ -26,8 +26,8 @@ CARS_LIST = [
     category: 'Monospace',
     places: 7,
     portes: 5,
-    moteur: "Diesel",
-    boite: "Manuel"
+    moteur: 'Diesel',
+    boite: 'Manuel'
   },
   {
     brand: 'Jeep',
@@ -35,8 +35,8 @@ CARS_LIST = [
     category: 'SUV',
     places: 4,
     portes: 5,
-    moteur: "Essence",
-    boite: "Manuel"
+    moteur: 'Essence',
+    boite: 'Manuel'
   },
   {
     brand: 'Mercedes',
@@ -44,8 +44,8 @@ CARS_LIST = [
     category: 'Utilitaire',
     places: 3,
     portes: 4,
-    moteur: "Essence",
-    boite: "Auto"
+    moteur: 'Essence',
+    boite: 'Auto'
   },
   {
     brand: 'Citroën',
@@ -53,8 +53,8 @@ CARS_LIST = [
     category: 'Utilitaire',
     places: 5,
     portes: 5,
-    moteur: "Diesel",
-    boite: "Manuel"
+    moteur: 'Diesel',
+    boite: 'Manuel'
   },
   {
     brand: 'Peugeot',
@@ -62,8 +62,8 @@ CARS_LIST = [
     category: 'Compacte',
     places: 4,
     portes: 3,
-    moteur: "Diesel",
-    boite: "Auto"
+    moteur: 'Diesel',
+    boite: 'Auto'
   },
   {
     brand: 'Mercedes',
@@ -71,8 +71,8 @@ CARS_LIST = [
     category: 'Compacte',
     places: 2,
     portes: 3,
-    moteur: "Essence",
-    boite: "Manuel"
+    moteur: 'Essence',
+    boite: 'Manuel'
   },
   {
     brand: 'BMW',
@@ -80,8 +80,8 @@ CARS_LIST = [
     category: 'Compacte',
     places: 5,
     portes: 5,
-    moteur: "Electrique",
-    boite: "Auto"
+    moteur: 'Electrique',
+    boite: 'Auto'
   },
   {
     brand: 'Fiat',
@@ -89,8 +89,8 @@ CARS_LIST = [
     category: 'Utilitaire',
     places: 7,
     portes: 7,
-    moteur: "Essence",
-    boite: "Manuel"
+    moteur: 'Essence',
+    boite: 'Manuel'
   }
 ].freeze
 
@@ -110,7 +110,7 @@ CARS_LIST.length.times do |i|
                         first_name: char.split[0],
                         last_name:  char.split[1],
                         birthdate: Faker::Date.birthday(18, 65),
-                        avatar_photo: File.open("app/assets/images/profil.jpg"))
+                        avatar_photo: File.open('app/assets/images/profil.jpg'))
     }
   ].freeze
   Car.create(cars)
