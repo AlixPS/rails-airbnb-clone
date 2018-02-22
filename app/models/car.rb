@@ -4,7 +4,7 @@ class Car < ApplicationRecord
   BOITE = %w[Auto Manuel].freeze
 
   belongs_to :user
-  has_many :rentals
+  has_many :rentals, dependent: :destroy
   has_many :reviews, through: :rentals
   mount_uploader :photo, PhotoUploader
 
