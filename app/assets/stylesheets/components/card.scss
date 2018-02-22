@@ -15,14 +15,21 @@
 // }
 
 .card{
-  display: block;
-  width: 100%;
+  width: 350px;
   flex: 1 1 auto;
+  opacity: 0.9;
   // width: 20%;
   margin: 10px;
   box-shadow: 4px 4px 27px -1px #999999;
   transition: all 0.3s ease;
   color: white;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    &:hover {
+      opacity: 1;
+    }
 }
 
 // .card:hover {
@@ -33,12 +40,17 @@
   background-size: cover;
   height: 180px;
   position: relative;
+  display: block;
 }
 
 .card-category {
   position: absolute;
-  top: 10px;
+  width: 100%;
+  top: 0px;
   left: 10px;
+  h3 {
+    line-height: 0px;
+  }
 }
 
 .card-avatar {
@@ -60,17 +72,21 @@
   padding: 10px;
   color: #999999;
   background-color:gray;
+  height: 40px;
 }
 
 .card-date {
   font-size: 12px;
 }
 
-.card a:hover {
+.card-link {
+
+  &:hover {
   text-decoration: none;
   color: white;
   opacity: 0.4;
   padding: 5px;
+  }
 }
 
 .card-link a:hover {

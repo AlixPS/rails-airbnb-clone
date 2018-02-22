@@ -1,12 +1,14 @@
 <% url = (car.photo? ? cl_image_path(car.photo, height: 250, width: 450, crop: :fill) : "" )  %>
-<%= link_to car_path(car), class: "card text-center", style:"background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('#{url}')" do %>
-    <div class="card-body">
-      <h3><%= car.brand %> <%= car.model %></h3>
+<div class="card text-center">
+  <%= link_to car_path(car), class: "card-body", style:"background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('#{url}')" do %>
+  <div class="card-category text-center">
+    <h3><%= car.brand %> <%= car.model %></h3>
+  </div>
+    <div class="card-desc">
+
     </div>
-    <div class="card-description">
-      <p><%= car.user.first_name %>  <%= car.user.last_name %></p>
+  <% end %>
+    <div class="card-footer text-center">
+      <p><%= car.category %></p> <p> <%= car.user.first_name %>  <%= car.user.last_name %> <%= image_tag car.user.avatar_photo, class:"avatar" %> </p>
     </div>
-<!--     <div class="card-footer text-center">
-      <%= car.category %>
-    </div> -->
-<% end %>
+</div>
