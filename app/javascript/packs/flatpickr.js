@@ -2,7 +2,7 @@ import flatpickr from 'flatpickr'
 import { French } from "flatpickr/dist/l10n/fr.js"
 import 'flatpickr/dist/flatpickr.css'
 
-flatpickr('#checkin_datepicker', {
+flatpickr('.datepicker', {
   enableTime: true,
   locale: French
-});
+})

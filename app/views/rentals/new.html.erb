@@ -1,7 +1,7 @@
 <h1>New rental</h1>
 <%= simple_form_for [@car, @rental] do |f| %>
-  <%= f.text_field :checkin, id: 'checkin_datepicker'  %>
-  <%= f.text_field :checkout, id: 'checkout_datepicker' %>
+  <%= f.text_field :checkin, class: 'datepicker', id: 'checkin_datepicker'  %>
+  <%= f.text_field :checkout, class: 'datepicker', id: 'checkout_datepicker' %>
   <%= f.submit %>
 <% end %>
 
