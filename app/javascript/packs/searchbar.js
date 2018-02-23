@@ -1,10 +1,3 @@
-
-import algoliasearch from 'algoliasearch';
-// import autocomplete from 'autocomplete';
-
-import './flatpickr';
-
-
 function initializeSearchBar() {
   var client = algoliasearch('AVGP7PHOB1', '62527b94d645090cf312a2a0dbcfb9ad');
   var index = client.initIndex('Car');
@@ -30,6 +23,5 @@ function initializeSearchBar() {
   });
 }
 
-// import { initializeSearchBar } from './searchbar.js';
 
-initializeSearchBar();
+export { initializeSearchBar };
