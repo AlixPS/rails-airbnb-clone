@@ -47,6 +47,8 @@ class CarsController < ApplicationController
   end
 
   def show
+    @review = Review.new
+    @reviews = @car.reviews
   end
 
   def index

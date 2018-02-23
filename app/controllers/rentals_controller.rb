@@ -9,7 +9,7 @@ class RentalsController < ApplicationController
   def create
     @rental      = Rental.new(rental_params)
     @rental.car  = @car
-    @rental.user = @car.user
+    @rental.user = current_user
 
     if @rental.save
       redirect_to @car
