@@ -1,5 +1,6 @@
 Car.destroy_all
 User.destroy_all
+Rental.destroy_all
 print `rm -r public/uploads/tmp/*`
 
 CARS_LIST = [
@@ -166,6 +167,17 @@ CARS_LIST.length.times do |i|
     portes:   CARS_LIST[i][:portes],
     moteur:   CARS_LIST[i][:moteur],
     boite:    CARS_LIST[i][:boite],
+    user:     User.find(rand((User.first.id)..(User.last.id)))
+  )
+end
+
+30.times do
+  checkin  = time_rand(Time.now, Time.local(2018, 3, 3))
+  checkout = time_rand(checkin, Time.local(2018, 7, 1))
+  Rental.create(
+    checkin:  checkin,
+    checkout: checkout,
+    car:      Car.find(rand((Car.first.id)..(Car.last.id))),
     user:     User.find(rand((User.first.id)..(User.last.id)))
   )
 end
