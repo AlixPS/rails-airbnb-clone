@@ -18,3 +18,4 @@ yarn-debug.log*
 .yarn-integrity
 /config/application.yml
 *.log
+/public/uploads/tmp
