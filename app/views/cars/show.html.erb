@@ -7,9 +7,9 @@
   <%= cl_image_tag @car.photo, height: 300, width: 700, crop: :limit %>
   <hr>
   <p><%= @car.user.first_name %>
-    <%= @car.user.last_name  %> 's car</p>
+    <%= @car.user.last_name  %></p>
   <hr>
-  <% if @car.user == current_user %>
+  <% if @car.user == current_user || @car.rentals.each{|x| x.user == current_user} %>
   <p>Rental's details</p>
   <ul>
     <% @car.rentals.each do |rental| %>
@@ -17,13 +17,25 @@
       <%= simple_form_for [@car, rental] do |f| %>
         <%= f.input :accepted, as: :boolean, label: 'Accepted?' %>
         <%= f.submit %>
-        <hr>
       <% end%>
+
+        Laisser un avis :
+        <%= simple_form_for [rental, @review] do |f| %>
+        <%= f.input :description %>
+        <%= f.submit %>
+        <% end %>
+    <hr>
     <% end %>
   </ul>
 <% end %>
+<hr>
     <h4>What other users say about this car : </h4>
-    <p>Reviews, Reviews, Reviews</p>
+    <% @reviews.each do |review| %>
+    <h4><%= review.rental.user.first_name %> <%= review.rental.user.last_name %> <%= image_tag review.rental.user.avatar_photo, class:"avatar" %> </h4>
+    <p><%= review.description %></p>
+    <p><%= review.rating %></p>
+    <hr>
+    <% end %>
 
   <%= link_to "Faire une demande de location", new_car_rental_path(@car) %>
   <br>

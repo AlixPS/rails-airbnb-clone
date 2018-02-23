@@ -13,7 +13,12 @@
       <div class="rental">
         <p><%= rental.user.first_name %> <%= rental.user.last_name %> <%= image_tag rental.user.avatar_photo, class:"avatar" %> </p>
         Quand : <%= rental.checkin %></p>
-        <p>Avis: <%= rental.review %></p>
+        <p>Note:
+         <% if rental.review.rating != nil %>
+           <%= rental.review.rating %>
+         <% end %>
+         </p>
+        <p>Avis: <%= rental.review.description %></p>
       </div>
       <% end %>
     </div>
