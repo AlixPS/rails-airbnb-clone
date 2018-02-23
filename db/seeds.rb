@@ -1,8 +1,19 @@
-Car.destroy_all
-User.destroy_all
+puts "Destruction des 'reviews'..."
+Review.destroy_all
+
+puts "Destruction des 'rentals'..."
 Rental.destroy_all
+
+puts "Destruction des 'cars'..."
+Car.destroy_all
+
+puts "Destruction des 'users'..."
+User.destroy_all
+
+puts "\nDestruction des anciennes images générées..."
 print `rm -r public/uploads/tmp/*`
 
+puts "\nInitialisation des constantes"
 CARS_LIST = [
   {
     brand:    'Tesla',
@@ -143,6 +154,7 @@ def time_rand(from = 0.0, to = Time.now)
   Time.at(from + rand * (to.to_f - from.to_f))
 end
 
+puts "\nCréation des 'users'..."
 ADDRESSES.length.times do |i|
   char       = Faker::HowIMetYourMother.character
   first_name = char.split.first
@@ -156,8 +168,10 @@ ADDRESSES.length.times do |i|
               avatar_photo: File.open('app/assets/images/profil.jpg'),
               adress:       ADDRESSES[i][:adress],
               city:         ADDRESSES[i][:city])
+  sleep 1
 end
 
+puts "Création des 'cars'..."
 CARS_LIST.length.times do |i|
   Car.create(
     brand:    CARS_LIST[i][:brand],
@@ -171,6 +185,7 @@ CARS_LIST.length.times do |i|
   )
 end
 
+puts "Création des 'rentals'..."
 30.times do
   checkin  = time_rand(Time.now, Time.local(2018, 3, 3))
   checkout = time_rand(checkin, Time.local(2018, 7, 1))
@@ -179,5 +194,14 @@ end
     checkout: checkout,
     car:      Car.find(rand((Car.first.id)..(Car.last.id))),
     user:     User.find(rand((User.first.id)..(User.last.id)))
+  )
+end
+
+puts "Création des 'reviews'..."
+50.times do
+  Review.create(
+    description: Faker::Lorem.paragraph,
+    rating:      rand(1..5),
+    rental:      Rental.find(rand((Rental.first.id)..(Rental.last.id)))
   )
 end
