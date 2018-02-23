@@ -1,0 +1,12 @@
+
+<h2><%= flat.first_name %> <%= flat.last_name %> </h2>
+<h4><%= flat.full_address %></h4>
+<p><% flat.cars.each do |x| %>
+   <%= x.brand %>
+   <%= x.model %>
+   ,
+   <%= x.category %>
+  <% end %>
+
+
+
