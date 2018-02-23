@@ -163,4 +163,4 @@ CARS_LIST.length.times do |i|
              ])
 end
 
-Car.where(user: nil).destroy_all if User.length != Car.length
+Car.where(user: nil).destroy_all if User.count != Car.count
