@@ -94,6 +94,49 @@ CARS_LIST = [
   }
 ].freeze
 
+ADDRESSES = [
+  {
+    adress: 'Cormes',
+    city: 'Mamers'
+  },
+  {
+    adress: 'Les Ricoux',
+    city: 'Saint-Rirand'
+  },
+  {
+    adress: 'Calès',
+    city: 'Castels et Bézenac'
+  },
+  {
+    adress: 'Esparron',
+    city: 'Gap'
+  },
+  {
+    adress: 'Marions',
+    city: 'Langon'
+  },
+  {
+    adress: 'Saint-Hélier',
+    city: 'Montbard'
+  },
+  {
+    adress: 'Quiry-le-Sec',
+    city: 'Montdidier'
+  },
+  {
+    adress: 'Pexonne',
+    city: 'Lunéville'
+  },
+  {
+    adress: 'Vignes d\'Orval',
+    city: 'Goussainville'
+  },
+  {
+    adress: 'Auxy',
+    city: 'Autun'
+  }
+].freeze
+
 CARS_LIST.length.times do |i|
   char = Faker::HowIMetYourMother.character
   cars = [
@@ -110,7 +153,9 @@ CARS_LIST.length.times do |i|
                         first_name: char.split[0],
                         last_name:  char.split[1],
                         birthdate: Faker::Date.birthday(18, 65),
-                        avatar_photo: File.open('app/assets/images/profil.jpg'))
+                        avatar_photo: File.open('app/assets/images/profil.jpg'),
+                        adress: ADDRESSES[i][:adress],
+                        city: ADDRESSES[i][:city])
     }
   ].freeze
   Car.create(cars)
