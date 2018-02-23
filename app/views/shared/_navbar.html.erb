@@ -9,6 +9,9 @@
   <div class="navbar-smap-right">
     <!-- Profile picture with dropdown list -->
     <div class="navbar-smap-item">
+      <%= link_to 'Les voitures', cars_path %>
+    </div>
+    <div class="navbar-smap-item">
       <div class="dropdown">
         <% if current_user && current_user.avatar_photo != nil  %>
         <%= image_tag current_user.avatar_photo, class:"avatar dropdown-toggle", id:"navbar-smap-menu", data: { toggle: 'dropdown' } %>
@@ -24,5 +27,3 @@
     </div>
   </div>
 </div>
-
-
