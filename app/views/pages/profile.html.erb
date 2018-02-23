@@ -1,6 +1,6 @@
 <div class="container">
   <% if  current_user != nil%>
-    <h1><%= current_user.first_name %> <%= current_user.last_name %> <%= cl_image_tag current_user.avatar_photo, height: 100, width: 100, crop: :fit%></h1>
+    <h1><%= current_user.first_name %> <%= current_user.last_name %> <%= cl_image_tag current_user.avatar_photo, height: 150, width: 150, crop: :fit%></h1>
     <table>
       <tr><h4><td> E-mail :  </td> <td><%= current_user.email %></td></h4></tr>
       <tr><h4><td> Mot de passe :  </td> <td>************ </td></h4></tr>
@@ -22,3 +22,5 @@
     <%= link_to "S'inscrire", new_user_registration_path %>
   <% end %>
 </div>
+
+
