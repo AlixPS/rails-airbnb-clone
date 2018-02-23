@@ -1,6 +1,16 @@
 class CarsController < ApplicationController
   before_action :set_car, only: [:edit, :destroy, :show, :update]
 
+  def dashboard
+    if current_user != nil
+      current_user.cars.each { |car| @car = car }
+      if @car != nil
+        @rentals = @car.rentals
+        @reviews = @car.reviews
+      end
+    end
+  end
+
   def home
     @cars = Car.all
     @users = User.where.not(latitude: nil, longitude: nil)
