@@ -1,5 +1,6 @@
 Car.destroy_all
 User.destroy_all
+print `rm -r public/uploads/tmp/*`
 
 CARS_LIST = [
   {
