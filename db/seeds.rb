@@ -142,24 +142,25 @@ CARS_LIST.length.times do |i|
   first_name = char.split.first
   last_name  = char.split.last
 
-  cars       = [
-    {
-      brand:    CARS_LIST[i][:brand],
-      model:    CARS_LIST[i][:model],
-      category: CARS_LIST[i][:category],
-      places:   CARS_LIST[i][:places],
-      portes:   CARS_LIST[i][:portes],
-      moteur:   CARS_LIST[i][:moteur],
-      boite:    CARS_LIST[i][:boite],
-      user:     User.create(email:        "#{first_name}@#{last_name}.com",
-                            password:     'azerty',
-                            first_name:   first_name,
-                            last_name:    last_name,
-                            birthdate:    Faker::Date.birthday(18, 65),
-                            avatar_photo: File.open('app/assets/images/profil.jpg'),
-                            adress:       ADDRESSES[i][:adress],
-                            city:         ADDRESSES[i][:city])
-    }
-  ].freeze
-  Car.create(cars)
+  Car.create([
+               {
+                 brand:    CARS_LIST[i][:brand],
+                 model:    CARS_LIST[i][:model],
+                 category: CARS_LIST[i][:category],
+                 places:   CARS_LIST[i][:places],
+                 portes:   CARS_LIST[i][:portes],
+                 moteur:   CARS_LIST[i][:moteur],
+                 boite:    CARS_LIST[i][:boite],
+                 user:     User.create(email:        "#{first_name}@smappy.com",
+                                       password:     'azerty',
+                                       first_name:   first_name,
+                                       last_name:    last_name,
+                                       birthdate:    Faker::Date.birthday(18, 65),
+                                       avatar_photo: File.open('app/assets/images/profil.jpg'),
+                                       adress:       ADDRESSES[i][:adress],
+                                       city:         ADDRESSES[i][:city])
+               }
+             ])
 end
+
+Car.where(user: nil).destroy_all if User.length != Car.length
