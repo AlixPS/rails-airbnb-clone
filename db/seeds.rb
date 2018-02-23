@@ -138,30 +138,34 @@ ADDRESSES = [
   }
 ].freeze
 
-CARS_LIST.length.times do |i|
+def time_rand(from = 0.0, to = Time.now)
+  Time.at(from + rand * (to.to_f - from.to_f))
+end
+
+ADDRESSES.length.times do |i|
   char       = Faker::HowIMetYourMother.character
   first_name = char.split.first
   last_name  = char.split.last
 
-  Car.create([
-               {
-                 brand:    CARS_LIST[i][:brand],
-                 model:    CARS_LIST[i][:model],
-                 category: CARS_LIST[i][:category],
-                 places:   CARS_LIST[i][:places],
-                 portes:   CARS_LIST[i][:portes],
-                 moteur:   CARS_LIST[i][:moteur],
-                 boite:    CARS_LIST[i][:boite],
-                 user:     User.create(email:        "#{first_name}@smappy.com",
-                                       password:     'azerty',
-                                       first_name:   first_name,
-                                       last_name:    last_name,
-                                       birthdate:    Faker::Date.birthday(18, 65),
-                                       avatar_photo: File.open('app/assets/images/profil.jpg'),
-                                       adress:       ADDRESSES[i][:adress],
-                                       city:         ADDRESSES[i][:city])
-               }
-             ])
+  User.create(email:        "#{first_name}@smappy.com",
+              password:     'azerty',
+              first_name:   first_name,
+              last_name:    last_name,
+              birthdate:    Faker::Date.birthday(18, 65),
+              avatar_photo: File.open('app/assets/images/profil.jpg'),
+              adress:       ADDRESSES[i][:adress],
+              city:         ADDRESSES[i][:city])
 end
 
-Car.where(user: nil).destroy_all if User.count != Car.count
+CARS_LIST.length.times do |i|
+  Car.create(
+    brand:    CARS_LIST[i][:brand],
+    model:    CARS_LIST[i][:model],
+    category: CARS_LIST[i][:category],
+    places:   CARS_LIST[i][:places],
+    portes:   CARS_LIST[i][:portes],
+    moteur:   CARS_LIST[i][:moteur],
+    boite:    CARS_LIST[i][:boite],
+    user:     User.find(rand((User.first.id)..(User.last.id)))
+  )
+end
