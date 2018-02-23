@@ -19,7 +19,7 @@ Geocoder.configure(
   # distances: :linear          # :spherical or :linear
   lookup:    :nominatim,
   # api_key:   ENV['GOOGLE_API_SERVER_KEY'],
-  timeout: 1,
+  timeout: 10,
   http_headers: { 'User-Agent' => 'https://www.facebook.com/smapmobility/' },
   use_https: true
 )
