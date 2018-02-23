@@ -3,6 +3,7 @@ ruby '2.4.3'
 
 gem 'algoliasearch-rails'
 gem 'autoprefixer-rails'
+gem 'awesome_print'
 gem 'bootstrap-sass'
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
