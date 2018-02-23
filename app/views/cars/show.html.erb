@@ -10,22 +10,30 @@
     <%= @car.user.last_name  %></p>
   <hr>
   <% if @car.user == current_user || @car.rentals.each{|x| x.user == current_user} %>
-  <p>Rental's details</p>
-  <ul>
-    <% @car.rentals.each do |rental| %>
-    <p><%= rental.checkin %> <%= rental.checkout %></p>
-      <%= simple_form_for [@car, rental] do |f| %>
-        <%= f.input :accepted, as: :boolean, label: 'Accepted?' %>
-        <%= f.submit %>
-      <% end%>
+  <p>Détails de la location</p>
+  <% @car.rentals.each do |rental| %>
+  <p> </p>
+  <%= simple_form_for [@car, rental] do |f| %>
+    <div class="row">
+      <div class="col-xs-3">
+        Du <%= Date.parse(rental.checkin.to_s).strftime('%d/%m/%Y') %>
+      </div>
+      <div class="col-xs-3">
+        Au <%= Date.parse(rental.checkout.to_s).strftime('%d/%m/%Y') %>
+      </div>
+    </div>
+  <%= f.input :accepted, as: :boolean, label: 'Accepted?' %>
+  <%= f.submit %>
+  <% end%>
 
-        Laisser un avis :
-        <%= simple_form_for [rental, @review] do |f| %>
-        <%= f.input :description %>
-        <%= f.submit %>
-        <% end %>
-    <hr>
-    <% end %>
+  Laisser un avis :
+  <%= simple_form_for [rental, @review] do |f| %>
+  <%= f.input :description %>
+  <%= f.submit %>
+  <% end %>
+  <hr>
+  <% end %>
+  <ul>
   </ul>
 <% end %>
 <hr>
