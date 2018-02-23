@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
 
   get "user/profile", to: "pages#profile"
+  get "user/dashboard", to: "cars#dashboard"
 end

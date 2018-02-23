@@ -1,0 +1,25 @@
+<h1 class="text-center">Dashboard</h1>
+<div class="container">
+<hr>
+  <% if current_user != nil %>
+  <h4>Votre voiture : <%= @car.brand %>
+    <%= @car.model %> ,
+    <%= @car.category %></h4>
+    <%= cl_image_tag @car.photo, height: 300, width: 700, crop: :limit %>
+<hr>
+    <h4>Vos locations</h4>
+    <div class="rentals">
+      <% @rentals.each do |rental| %>
+      <div class="rental">
+        <p><%= rental.user.first_name %> <%= rental.user.last_name %> <%= image_tag rental.user.avatar_photo, class:"avatar" %> </p>
+        Quand : <%= rental.checkin %></p>
+        <p>Avis: <%= rental.review %></p>
+      </div>
+      <% end %>
+    </div>
+  <% else %>
+  <%= link_to "Se connecter", new_user_session_path %>
+      <br>
+  <%= link_to "S'inscrire", new_user_registration_path %>
+  <% end %>
+</div>
