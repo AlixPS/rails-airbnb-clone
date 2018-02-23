@@ -13,17 +13,16 @@
   <p>Détails de la location</p>
   <% @car.rentals.each do |rental| %>
   <p> </p>
-  <%= simple_form_for [@car, rental] do |f| %>
-    <div class="row">
-      <div class="col-xs-3">
-        Du <%= Date.parse(rental.checkin.to_s).strftime('%d/%m/%Y') %>
-      </div>
-      <div class="col-xs-3">
-        Au <%= Date.parse(rental.checkout.to_s).strftime('%d/%m/%Y') %>
-      </div>
+  <%= simple_form_for([@car, rental], html: { class: 'form-inline' }) do |f| %>
+    <div class="form-group">
+      <div class="form-control">Du <%= Date.parse(rental.checkin.to_s).strftime('%d/%m/%Y') %></div>
     </div>
-  <%= f.input :accepted, as: :boolean, label: 'Accepted?' %>
-  <%= f.submit %>
+    <div class="form-group">
+      <div class="form-control">Au <%= Date.parse(rental.checkout.to_s).strftime('%d/%m/%Y') %></div>
+    </div>
+
+  <%= f.input :accepted, as: :boolean, label: 'Accepter ?' %>
+  <%= f.submit class: 'btn btn-default'%>
   <% end%>
 
   Laisser un avis :
@@ -37,7 +36,7 @@
   </ul>
 <% end %>
 <hr>
-    <h4>What other users say about this car : </h4>
+    <h4>Ce que les gens disent de cette voiture : </h4>
     <% @reviews.each do |review| %>
     <h4><%= review.rental.user.first_name %> <%= review.rental.user.last_name %> <%= image_tag review.rental.user.avatar_photo, class:"avatar" %> </h4>
     <p><%= review.description %></p>
