@@ -15,6 +15,22 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   }
 }
 
+const homeMapElement = document.getElementById('home-map');
+if (homeMapElement) { // don't try to build a map if there's no div#map to inject in
+  const homeMap = new GMaps({ el: '#home-map', lat: 0, lng: 0 });
+  const markers = JSON.parse(homeMapElement.dataset.markers);
+  homeMap.addMarkers(markers);
+  if (markers.length === 0) {
+    homeMap.setZoom(2);
+  } else if (markers.length === 1) {
+    homeMap.setCenter(markers[0].lat, markers[0].lng);
+    homeMap.setZoom(14);
+  } else {
+    homeMap.fitLatLngBounds(markers);
+  }
+}
+
+
 const styles = [
     {
         "featureType": "administrative",
