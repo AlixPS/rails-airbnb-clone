@@ -36,7 +36,7 @@
   </ul>
 <% end %>
 <hr>
-    <h4>Ce que les gens disent de cette voiture : </h4>
+    <h4>Ce que les autres utilisateurs disent de cette voiture : </h4>
     <% @reviews.each do |review| %>
     <h4><%= review.rental.user.first_name %> <%= review.rental.user.last_name %> <%= image_tag review.rental.user.avatar_photo, class:"avatar" %> </h4>
     <p><%= review.description %></p>
