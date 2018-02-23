@@ -8,8 +8,8 @@ class CarsController < ApplicationController
     @markers = @users.map do |flat|
       {
         lat: flat.latitude,
-        lng: flat.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        lng: flat.longitude,
+        infoWindow: { content: render_to_string(partial: "/cars/map_box", locals: { flat: flat }) }
       }
     end
   end
